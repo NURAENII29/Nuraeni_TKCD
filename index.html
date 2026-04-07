@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id" class=" overflow-auto">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NuraeniDOM</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body
+    class="flex relative  overflow-auto  min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-pink-300 via-rose-400 to-fuchsia-500">
+
+    <!-- Blur Background -->
+    <div class="absolute top-[-80px] left-[-80px] w-64 h-64 bg-white/20 rounded-full blur-3xl animate-pulseSoft"></div>
+    <div
+        class="absolute bottom-[-100px] right-[-80px] w-72 h-72 bg-pink-200/30 rounded-full blur-3xl animate-pulseSoft">
+    </div>
+    <div class="absolute top-1/3 right-10 w-40 h-40 bg-rose-200/30 rounded-full blur-2xl animate-drift"></div>
+
+    <!-- Floating Love Icons -->
+    <div class="absolute top-16 left-16 text-white/20 text-7xl font-black animate-floatSlow select-none">♥</div>
+    <div class="absolute top-40 right-24 text-white/15 text-6xl font-black animate-floatMedium select-none">♥</div>
+    <div class="absolute bottom-24 left-24 text-white/20 text-8xl font-black animate-drift select-none">♥</div>
+    <div class="absolute bottom-32 right-40 text-white/10 text-5xl font-black animate-floatSlow select-none">♥</div>
+
+    <!-- Love Card 1 -->
+    <div
+        class="absolute top-24 left-1/4 w-24 h-28 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl animate-floatSlow rotate-6 flex items-center justify-center">
+        <i class='bx bxs-heart text-white/70 text-5xl'></i>
+    </div>
+
+    <!-- Love Card 2 -->
+    <div
+        class="absolute bottom-20 right-1/4 w-24 h-28 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl animate-floatMedium -rotate-6 flex items-center justify-center">
+        <i class='bx bxs-heart text-white/70 text-5xl'></i>
+    </div>
+
+    <!-- Floating Love Bubbles -->
+    <div
+        class="absolute top-1/2 left-10 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm backdrop-blur-md animate-drift">
+        ♥
+    </div>
+
+    <div
+        class="absolute top-1/4 right-12 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm backdrop-blur-md animate-floatSlow">
+        ♥
+    </div>
+
+    <div
+        class="absolute bottom-1/3 left-1/3 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm backdrop-blur-md animate-floatMedium">
+        ♥
+    </div>
+
+    <div
+        class="absolute bottom-16 right-16 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm backdrop-blur-md animate-drift">
+        ♥
+    </div>
+
+    <div id="utama"
+        class="transition-all h-full relative self-center ease-in-out duration-300 w-full md:w-1/2 lg:w-[65%] z-10 grid gap-2 md:gap-3 md:flex items-center justify-center p-4">
+        <div id="formAktivitas"
+            class="w-full max-w-md backdrop-blur-lg transition-all ease-in-out duration-300 rounded-3xl shadow-md p-6 grid gap-2 bg-white/10 border border-white/20">
+            <div class="w-full">
+                <label for="aktivitas" class="text-white text-lg font-semibold">Aktivitas</label>
+                <input type="text" id="aktivitas" placeholder="Contoh Belajar Dan Lain Sebagainya"
+                    class="w-full p-3 rounded-xl bg-white shadow-md placeholder:italic outline-none focus:ring-2 focus:ring-pink-400 placeholder:text-gray-400">
+            </div>
+
+            <div class="w-full">
+                <label for="tanggal" class="text-white text-lg font-semibold">Tanggal</label>
+                <input type="date" id="tanggal"
+                    class="w-full p-3 rounded-xl bg-white shadow-md placeholder:italic outline-none focus:ring-2 focus:ring-pink-400 placeholder:text-gray-400">
+            </div>
+
+            <div class="w-full">
+                <label for="durasi" class="text-white text-lg font-semibold">Durasi</label>
+                <input type="number" id="durasi" placeholder="Durasi"
+                    class="w-full p-3 rounded-xl bg-white shadow-md placeholder:italic outline-none focus:ring-2 focus:ring-pink-400 placeholder:text-gray-400">
+            </div>
+
+            <button id="btnSubmit"
+                class="w-full mt-5 py-3 rounded-2xl bg-pink-500 hover:bg-pink-600 transition-all ease-in-out duration-300 focus:ring-2 outline-none focus:ring-pink-300 text-white font-semibold">
+                Buat Jadwal
+            </button>
+        </div>
+
+         <div class=" p-2 backdrop-blur-2xl w-full md:w-[65%] lg:w-1/2 shadow-lg transition-all ease-in-out duration-300 rounded-3xl bg-white/10">
+            <div class="relative overflow-x-auto max-h-72 overflow-auto shadow-xl">
+                <div class="mb-2 mt-5" id="noAktivitas">
+                    <div class="text-center">
+                        <i class='bx bxs-heart animate-ping text-pink-200 text-2xl'></i>
+                    </div>
+                    <h1 class="text-center text-white text-2xl font-semibold">Belum ada aktivitas yang dibuat!</h1>
+                </div>
+                <table class="w-full text-sm text-left rtl:text-right text-body hidden">
+                    <thead class="bg-pink-500 sticky top-0 text-white border-b border-default rounded-2xl">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Aktivitas
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Tanggal
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Durasi
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyAktivitas">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const aktivitas = document.getElementById('aktivitas')
+        const tanggal = document.getElementById('tanggal')
+        const durasi = document.getElementById('durasi')
+        const btnSubmit = document.getElementById('btnSubmit')
+        const total = document.getElementById('jumlahAktivitas')
+        const daftarAktivitas = document.getElementById('daftarAktivitas')
+        const formAktivitas = document.getElementById('formAktivitas')
+        const dataAktivitas = document.getElementById('dataAktivitas')
+        const bodyAktivitas = document.getElementById('bodyAktivitas')
+        const closeDaftarAktivitas = document.getElementById('closeDaftarAktivitas')
+        let jumlahAktivitas = [];
+        let totalAktivitas;
+        const delay = ms => new Promise((resolve) => setTimeout(resolve, ms));
+
+        btnSubmit.addEventListener('click', () => {
+            if (aktivitas.value === '' || tanggal.value === '' || durasi.value === '') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Semua field harus diisi!'
+                })
+            } else {
+                jumlahAktivitas.push({
+                    aktivitas: aktivitas.value,
+                    tanggal: tanggal.value,
+                    durasi: parseInt(durasi.value)
+                })
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                })
+            }
+             if (jumlahAktivitas.length > 0) {
+                let total = jumlahAktivitas.map((aktivitas) => {
+                    return `<tr
+                            class="odd:bg-pink-400/20 text-white even:bg-pink-300/10 border-b border-white/20">
+                            <th scope="row" class="px-6 truncate max-w-12 py-4 font-medium whitespace-nowrap">
+                                ${aktivitas.aktivitas}
+                            </th>
+                            <td class="px-6 py-4">
+                                ${aktivitas.tanggal}
+                            </td>
+                            <td class="px-6 py-4">
+                                ${aktivitas.durasi} menit
+                            </td>
+                        </tr>`
+                })
+                bodyAktivitas.innerHTML = total.join('')
+                document.getElementById('noAktivitas').classList.add('hidden')
+                document.querySelector('table').classList.remove('hidden')
+            }
+        })
+
+    </script>
+</body>
+
+</html>
